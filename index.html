@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Translator App</title>
+<script src="https://unpkg.com/pinyin-pro@3.18.2/dist/index.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h2>Chimdevit translator</h2>
+        <div class="toggle" onclick="toggleDarkMode()">🌚</div>
+    </div>
+    <textarea id="text" placeholder="Type something..." oninput="autoResize(this)"></textarea>
+    <div class="select-group">
+        <select id="from">
+            <option value="en">English</option>
+            <option value="zh">Chinese</option>
+            <option value="km">Khmer</option>
+        </select>
+        <select id="to">
+            <option value="zh">Chinese</option>
+            <option value="en">English</option>
+            <option value="km">Khmer</option>
+        </select>
+    </div>
+    <div class="buttons">
+        <button onclick="translateText()">Translate</button>
+        <button onclick="speakText()"> Voice</button>
+    </div>
+    <div class="output">
+        <h3>Result</h3>
+        <div id="result">..
+          .</div>
+        <div id="pinyin"></div><br>
+        <button onclick="copyText()">Copy</button>
+    </div>
+    <div class="history">
+        <h3>History</h3>
+        <div id="historyList">
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
